@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="prism.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Installing VS CODE on mobie | ProgrammerSaikat</title>
+  </head>
+  <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ProgrammerSaikat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <!-- <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+<div class="container">
+    <h1>How to istall VS Code on Android Phone - ProgrammerSaikat</h1>
+    <div class="alert alert-warning">Before going to these process make sure you have an External keyboard to type, you can't type on your virtual keyboard on Code Server <br>If you haven't one, dont worry... <a href="">Click here</a> for another tutorial</div>
+    <div class="my-5"></div>
+    <ol>
+        <li class="h2 my-3">Install Termux</li>
+        <p class="lead">Go to Play Store and Install <a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a></p>
+        <img src="" alt="Screenshot">
+        <li class="h2 my-3">apt update && apt upgrade</li>
+        <p class="lead">Run the command in Termux to update packages:</p>
+        <pre><code class="language-js">apt update && apt upgrade</code></pre>
+        <p class="lead">If it dosen't work, try to change repo by firing this command:</p>
+        <pre><code class="language-js">termux-chnge-repo</code></pre>
+        <p class="lead">And then try update commands</p>
+        <li class="h2 my-3">Install Ubuntu on Termux</li>
+        <p class="lead">Fire the bellow command on Termux to install Ubuntu on Termux</p>
+        <pre><code class="language-js">pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh</code></pre>
+        <li class="h2 my-3">Start Ubuntu</li>
+        <p class="lead">Start Ubuntu on Termux by firing this comand:</p>
+        <pre><code class="language-js">./start-ubuntu.sh</code></pre>
+        <li class="h2 my-3">Install code server:</li>
+        <p class="lead">First download the latest release of code server from Github by firing this command:</p>
+        <pre><code class="language-js">wget https://github.com/cdr/code-server/releases/download/v3.10.2/code-server-3.10.2-linux-arm64.tar.gz</code></pre>
+        <p class="lead">After downloading code swerver you have to install code server. To intall, run this command:</p>
+        <pre><code class="language-js"></code>tar -xvf ./code-server-3.10.2-linux-arm64.tar.gz</pre>
+        <li class="h2 my-3">Start code-server</li>
+        <p class="lead">Go to <i>code-server-3.10.2-linux-arm64/bin</i> folderin Termux</p>
+        <pre><code class="language-js"></code>cd code-server-3.10.2-linux-arm64/bin</pre>
+        <div class="alert alert-primary"><b>Note: </b>You don't have to type this command manually or copy it everytime. Simply type <code>cd code </code> and <code>Tab</code> to auto comple this. afterthat, add <code>/bin</code> to this or go to bin folder manually <code>cd bin</code></div>
+        <p>Set a password by running this command:</p>
+        <div class="alert alert-primary"><b>Note: </b>Every time you open code-server you have to set a password.</div>
+        <pre><code class="language-js">export PASSWORD="s"</code></pre>
+        <p class="lead">Then start code-server by running this command:</p>
+        <pre><code class="language-js">./code-server</code></pre>
+        <p class="lead">Congratulations!! Now you have successfully installed code-server on your mobile</p>
+        <p class="lead">Go to browser and go to: </p>
+        <pre><code class="language-js">localhost:8080</code></pre>
+        <p class="lead">Enter your password and get started with code-server(Vs Code)</p>
+    </ol>
+
+</div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+</body>
+</html>
